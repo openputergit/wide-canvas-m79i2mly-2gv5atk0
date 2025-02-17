@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MangaVerse - Your Anime & Manga Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+        }
+        .manga-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-blue-600">MangaVerse</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600">Manga</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600">Anime</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600">Favorites</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <input type="search" placeholder="Search..." class="px-4 py-2 rounded-full border focus:outline-none focus:border-blue-500">
+                        <i class="bi bi-search absolute right-3 top-2.5 text-gray-400"></i>
+                    </div>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="bg-gradient-to-r from-blue-500 to-blue-700 rounded-2xl p-8 mb-8">
+                <h1 class="text-4xl font-bold text-white mb-4">Welcome to MangaVerse</h1>
+                <p class="text-white text-lg mb-6">Discover and read your favorite manga and anime all in one place</p>
+                <button class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100">
+                    Start Reading
+                </button>
+            </div>
+
+            <!-- Popular Manga Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold mb-6">Popular Manga</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <!-- Manga Cards -->
+                    <div class="manga-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://source.unsplash.com/300x400/?manga" alt="Manga Cover" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800">Manga Title</h3>
+                            <p class="text-sm text-gray-600">Chapter 123</p>
+                        </div>
+                    </div>
+                    <!-- Repeat manga cards with different images -->
+                    <div class="manga-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://source.unsplash.com/300x401/?anime" alt="Manga Cover" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800">Manga Title</h3>
+                            <p class="text-sm text-gray-600">Chapter 456</p>
+                        </div>
+                    </div>
+                    <!-- Add more manga cards as needed -->
+                </div>
+            </section>
+
+            <!-- Latest Updates Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold mb-6">Latest Updates</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://source.unsplash.com/100x100/?manga" alt="Update" class="w-20 h-20 rounded-lg object-cover">
+                            <div>
+                                <h3 class="font-semibold">New Chapter Release</h3>
+                                <p class="text-sm text-gray-600">Chapter 789 is now available</p>
+                                <span class="text-xs text-blue-600">2 hours ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more update cards -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Mobile Navigation -->
+    <div class="fixed bottom-0 w-full bg-white border-t md:hidden">
+        <div class="flex justify-around py-3">
+            <a href="#" class="text-gray-600 hover:text-blue-600">
+                <i class="bi bi-house-door text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-600 hover:text-blue-600">
+                <i class="bi bi-book text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-600 hover:text-blue-600">
+                <i class="bi bi-play-circle text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-600 hover:text-blue-600">
+                <i class="bi bi-heart text-xl"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Add to favorites functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mangaCards = document.querySelectorAll('.manga-card');
+            mangaCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Add to favorites logic here
+                    console.log('Manga added to favorites');
+                });
+            });
+
+            // Search functionality
+            const searchInput = document.querySelector('input[type="search"]');
+            searchInput.addEventListener('input', function(e) {
+                // Search logic here
+                console.log('Searching for:', e.target.value);
+            });
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
